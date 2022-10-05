@@ -9,7 +9,6 @@ public class Paintbrush {
     }
 
     
-
     public void drawSky(){
         g.setColor(Config.COLOR_SKY);
         g.fillRect(0, 0, 400, 100);

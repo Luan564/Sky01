@@ -15,6 +15,6 @@ public class Swing02 {
             window.setLocationRelativeTo(null);         //Al correr el programa la ventana aparecerá al centro
             window.setVisible(true);                    //Hace la ventana visible
     
-    
+            window.addKeyListener(cielitoLindo);
         }
     }
