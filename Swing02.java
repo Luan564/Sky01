@@ -8,7 +8,7 @@ public class Swing02 {
     
     
             window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);    //Definimos el comportamiento al cerrar nuestro programa
-            window.setSize(400, 300);       //Definimos el tamaño de nuesta ventana
+            window.setSize(Config.WINDOW_W, Config.WINDOW_H);       //Definimos el tamaño de nuesta ventana
             window.add(cielitoLindo);                     //Añadimos nuesto objeto a la ventana
             window.pack();                                //Desconosco su uso
             window.setResizable(false);         //Impide que el usuario pueda agrandar la pantalla arruinando nuestro dibujo 
