@@ -1,5 +1,7 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Polygon;
+
 
 public class Paintbrush {
     
@@ -64,4 +66,48 @@ public class Paintbrush {
             g.fillPolygon(triangle);
         }    
     }   
+
+    public void drawCar(){
+        g.setColor(Config.COLOR_CAR);
+        g.fillRect(Config.CAR_posX, Config.CAR_posY, Config.CAR_widthBody, Config.CAR_heightBody);
+        Polygon car01 = new Polygon();
+        car01.addPoint(Config.CAR_posX+10,Config.CAR_posY);
+        car01.addPoint(Config.CAR_posX+20,Config.CAR_posY-14);
+        car01.addPoint(Config.CAR_posX+20,Config.CAR_posY);
+        g.setColor(Config.COLOR_CAR);
+        g.fillPolygon(car01);
+        g.fillRect(Config.CAR_posX+20, Config.CAR_posY-14, Config.CAR_widthBody-40,Config.CAR_heightBody-6);
+        Polygon car02 = new Polygon();
+        car02.addPoint(Config.CAR_posX+60,Config.CAR_posY);
+        car02.addPoint(Config.CAR_posX+60,Config.CAR_posY-14);
+        car02.addPoint(Config.CAR_posX+70, Config.CAR_posY);
+        g.setColor(Config.COLOR_CAR);
+        g.fillPolygon(car02);
+        g.setColor(Config.COLOR_WHEELS);
+        g.fillOval(Config.CAR_posX+12, Config.CAR_posY+16, Config.SIZE_WHEELS, Config.SIZE_WHEELS);
+        g.fillOval(Config.CAR_posX+52,Config.CAR_posY+16,Config.SIZE_WHEELS, Config.SIZE_WHEELS);
+    }
+    
+    public void drawCar(int x, int y, Color NEW_COLOR){
+
+        g.setColor(NEW_COLOR);
+        g.fillRect(x, y, Config.CAR_widthBody , Config.CAR_heightBody);
+        Polygon car01 = new Polygon();
+        car01.addPoint(x+10,y);
+        car01.addPoint(x+20,y-14);
+        car01.addPoint(x+20,y);
+        g.setColor(NEW_COLOR);
+        g.fillPolygon(car01);
+        g.fillRect(x+20, y-14, Config.CAR_widthBody-40,Config.CAR_heightBody-6);
+        Polygon car02 = new Polygon();
+        car02.addPoint(x+60,y);
+        car02.addPoint(x+60,y-14);
+        car02.addPoint(x+70, y);
+        g.setColor(NEW_COLOR);
+        g.fillPolygon(car02);
+        g.setColor(Config.COLOR_WHEELS);
+        g.fillOval(x+12, y+16, Config.SIZE_WHEELS, Config.SIZE_WHEELS);
+        g.fillOval(x+52,y+16,Config.SIZE_WHEELS,Config.SIZE_WHEELS);
+    }
+    
 }

@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.*;
+import javax.swing.Timer;
 
 import javax.swing.JPanel;
 
@@ -10,8 +11,10 @@ public class Paint01 extends JPanel implements KeyListener, ActionListener{
 
     Point pSun = new Point(Config.WINDOW_W/2,Config.WINDOW_H/2);
     public Paint01 (){
-     setPreferredSize(new Dimension(Config.WINDOW_W,Config.WINDOW_H));
-     setBackground(Config.COLOR_BG); 
+    setPreferredSize(new Dimension(Config.WINDOW_W,Config.WINDOW_H));
+    setBackground(Config.COLOR_BG);    
+    Timer timer = new Timer(100, this); 
+    timer.start();
     }
 
     
@@ -20,17 +23,26 @@ public class Paint01 extends JPanel implements KeyListener, ActionListener{
         super.paintComponent(g);
         Paintbrush paintbrush = new Paintbrush(g);
         paintbrush.drawSky();
-        paintbrush.drawSun(pSun);
         paintbrush.drawMountains();
         paintbrush.drawTree();  
-        Car car = new Car(g);
-        car.drawCar();
+        paintbrush.drawSun(pSun);
+        paintbrush.drawCar(100,50,Color.BLUE);
+        paintbrush.drawCar();
+        paintbrush.drawCar(300, 200, Color.ORANGE);
+        
+        
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+        int x = pSun.getX();
+        x = x;
+        pSun.setX(x);
+        int y = pSun.getY();
+        y = y+1;
+        pSun.setY(y);
+        repaint();
         
     }
     
@@ -41,8 +53,8 @@ public class Paint01 extends JPanel implements KeyListener, ActionListener{
     }
 
     @Override
-    public void keyPressed(KeyEvent event) {
-        int key = event.getKeyCode(); 
+    public void keyPressed(KeyEvent e) {
+        int key = e.getKeyCode(); 
         if(key == KeyEvent.VK_UP){
             pSun.setY(pSun.getY()-Config.SUN_STEP);
         }
@@ -60,7 +72,6 @@ public class Paint01 extends JPanel implements KeyListener, ActionListener{
         }
 
         repaint();
-    
     }
 
     @Override

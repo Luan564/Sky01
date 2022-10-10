@@ -14,7 +14,6 @@ public class Swing02 {
             window.setResizable(false);         //Impide que el usuario pueda agrandar la pantalla arruinando nuestro dibujo 
             window.setLocationRelativeTo(null);         //Al correr el programa la ventana aparecerá al centro
             window.setVisible(true);                    //Hace la ventana visible
-    
             window.addKeyListener(cielitoLindo);
         }
     }
