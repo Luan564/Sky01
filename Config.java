@@ -5,10 +5,6 @@ import javax.swing.plaf.ColorUIResource;
 public class Config {
     public static final Color COLOR_CAR = Color.LIGHT_GRAY;
     public static final Color COLOR_WHEELS = Color.BLACK;
-    public static final int CAR_widthBody = 80;
-    public static final int CAR_heightBody = 20;
-    public static final int CAR_posX = 0;
-    public static final int CAR_posY = 0;
     public static final int SIZE_WHEELS = 17;
 
 

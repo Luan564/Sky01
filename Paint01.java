@@ -11,15 +11,18 @@ import javax.swing.JPanel;
 
 public class Paint01 extends JPanel implements KeyListener, ActionListener{
     ArrayList<Car> cars = new ArrayList<Car>();
+    ArrayList<Plane> planes = new ArrayList<Plane>();
 
     Point pSun = new Point(Config.SUN_POSX,Config.SUN_POSY);
     public Paint01 (){
     setPreferredSize(new Dimension(Config.WINDOW_W,Config.WINDOW_H));
     setBackground(Config.COLOR_BG);    
-    Timer timer = new Timer(100, this); 
+    Timer timer = new Timer(80, this); 
     timer.start();
-    cars.add(new Car(20, 230, 7, 0, Color.GRAY));
-    cars.add(new Car(10, 170, 4, 0, Color.cyan));
+    cars.add(new Car(30,220,2,0,Color.BLUE,80,20));
+    cars.add(new Car(370,270,-4,0,Color.MAGENTA,80,20));
+    planes.add(new Plane(30,80,6,-1,Color.gray,64,14));
+    
     }
 
     
@@ -31,9 +34,14 @@ public class Paint01 extends JPanel implements KeyListener, ActionListener{
         paintbrush.drawSun(pSun);
         paintbrush.drawMountains();
         paintbrush.drawTree();  
+        
         for(Car c : cars){
             c.move();
             c.drawCar(g);
+        }
+        for(Plane p : planes){
+            p.move();
+            p.drawPlane(g);
         }
         
     }
