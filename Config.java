@@ -7,8 +7,8 @@ public class Config {
     public static final Color COLOR_WHEELS = Color.BLACK;
     public static final int CAR_widthBody = 80;
     public static final int CAR_heightBody = 20;
-    public static final int CAR_posX = 120;
-    public static final int CAR_posY = 220;
+    public static final int CAR_posX = 0;
+    public static final int CAR_posY = 0;
     public static final int SIZE_WHEELS = 17;
 
 
@@ -22,6 +22,9 @@ public class Config {
     public static final Color COLOR_MOUNTAINS = new ColorUIResource(99, 55, 45);
     public static final Color COLOR_SKY = new ColorUIResource(127,233,245);
     public static final int SUN_SIZE = 20;
+    public static final int SUN_POSX= 40;
+    public static final int SUN_POSY= 70;
+
     public static final int SUN_STEP = 5;
 
 
