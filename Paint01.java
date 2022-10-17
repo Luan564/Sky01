@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 public class Paint01 extends JPanel implements KeyListener, ActionListener{
     ArrayList<Car> cars = new ArrayList<Car>();
     ArrayList<Plane> planes = new ArrayList<Plane>();
+    ArrayList<Boat> boats = new ArrayList<Boat>();
+    ArrayList<Ovni> ovnis = new ArrayList<Ovni>();
 
     Point pSun = new Point(Config.SUN_POSX,Config.SUN_POSY);
     public Paint01 (){
@@ -19,9 +21,22 @@ public class Paint01 extends JPanel implements KeyListener, ActionListener{
     setBackground(Config.COLOR_BG);    
     Timer timer = new Timer(80, this); 
     timer.start();
-    cars.add(new Car(30,220,2,0,Color.BLUE,80,20));
-    cars.add(new Car(370,270,-4,0,Color.MAGENTA,80,20));
+    cars.add(new Car(400,190,-5,0,Color.BLUE,72,18));
+    cars.add(new Car(90,210,5,0,Color.MAGENTA,72,18));
+    cars.add(new Car(0,210,3,0,Color.ORANGE,72,18));
+
     planes.add(new Plane(30,80,6,-1,Color.gray,64,14));
+    planes.add(new Plane(30,60,7,-2,Color.black,58,14));
+    planes.add(new Plane(0,110,9,-1,Color.WHITE,58,14));
+
+    boats.add(new Boat(20, 260, 2, 0, Color.yellow, 54, 36));
+    boats.add(new Boat(40, 270, 4, 0, Color.BLUE, 54, 36));
+    boats.add(new Boat(60, 290, 6, 0, Color.PINK, 54, 36));
+
+
+    ovnis.add(new Ovni(458, 80, -10, -3, Color.WHITE , 34, 16));
+    ovnis.add(new Ovni(480, 140, -15, 0, Color.DARK_GRAY , 34, 16));
+    ovnis.add(new Ovni(-30, 40, 10, -1, Color.PINK  , 34, 16));
     
     }
 
@@ -34,6 +49,8 @@ public class Paint01 extends JPanel implements KeyListener, ActionListener{
         paintbrush.drawSun(pSun);
         paintbrush.drawMountains();
         paintbrush.drawTree();  
+        paintbrush.drawHighway();
+        paintbrush.drawLake();
         
         for(Car c : cars){
             c.move();
@@ -42,6 +59,14 @@ public class Paint01 extends JPanel implements KeyListener, ActionListener{
         for(Plane p : planes){
             p.move();
             p.drawPlane(g);
+        }
+        for(Boat b : boats){
+            b.move();
+            b.drawBoat(g);
+        }
+        for(Ovni o : ovnis){
+            o.move();
+            o.drawOvni(g);
         }
         
     }

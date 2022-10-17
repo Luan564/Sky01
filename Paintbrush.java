@@ -45,7 +45,7 @@ public class Paintbrush {
     
     public void drawTree(){
         int start = 70;
-        int top = 50;
+        int top = 40;
         //Draw trunk
         g.setColor(Config.COLOR_TRUNK);
         g.fillRect(start-13, top+110, 26, 40);
@@ -66,7 +66,19 @@ public class Paintbrush {
         }    
     }   
 
-    
+    public void drawLake(){
+        g.setColor(Config.COLOR_LAKE);
+        g.fillRect(0, 255, 400, 45);
+    }
+
+    public void drawHighway(){
+        g.setColor(Config.COLOR_HIGHWAY);
+        g.fillRect(0, 188, 400, 24);
+        g.setColor(Config.COLOR_LINE);
+        g.fillRect(0, 212, 400, 3);
+        g.setColor(Config.COLOR_HIGHWAY);
+        g.fillRect(0, 215, 400, 24);
+    }
         
      
 }
